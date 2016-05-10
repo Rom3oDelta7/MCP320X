@@ -15,7 +15,7 @@ MCP320x(uint8_t CS, uint8_t DIN, uint8_t DOUT, uint8_t CLK);
 Pin mode constructor.
 
 |Parameter|Purpose|
-|---------|------------|
+|----|-------|
 CS|chip select
 DIN|MCP data in
 DOUT|MCP data out
@@ -27,7 +27,7 @@ MCP320x(uint8_t CS);
 SPI mode constructor (uses standard SPI pins (depends on your MCU))
 
 |Parameter|Purpose|
-|---------|------------|
+|---|-------|
 CS|chip select
 
 ## Functions
@@ -44,26 +44,26 @@ Read all channels up to _channelCount_ into the given array (_channelValue_). Re
 ```C++
 MCPMode getMCPConfig(uint8_t channel);
 ```
-Get configuration (single-ended(_MCP_SINGLE_) or differential(_MCP_DIFFERENTIAL_)) for the given _channel_. Returns **MCP_RANGE_ERROR** for values out of range.
+Get configuration (single-ended(**MCP_SINGLE**) or differential(**MCP_DIFFERENTIAL**)) for the given _channel_. Returns **MCP_RANGE_ERROR** for values out of range.
 
 ```C++
 bool setMCPConfig(MCPMode mode, uint8_t channel);
 ```
-Sets _channel_ configuration to single-ended(_MCP_SINGLE_) or differential(_MCP_DIFFERENTIAL_). Use **MCP_ALL_PORTS** as the channel parameter to set all channels.
+Sets _channel_ configuration to single-ended(**MCP_SINGLE**) or differential(**MCP_DIFFERENTIAL**). Use **MCP_ALL_PORTS** as the channel parameter to set all channels.
 Returns **true** if successful, else **false**.
 
 ```C++
 float rawToVoltage(float VREF, uint16_t ADCRawValue);	
 ```
-Convert output from `readChannel()` _ADCRawValue_ to volts using given reference voltage _VREF_. This must be the same as the voltage supplied to the MCP VREF pin.
+Convert output from `readChannel()`, _ADCRawValue_, to volts using given reference voltage _VREF_. This must be the same as the voltage supplied to the MCP VREF pin.
 
 
 ## Copyright Notice
 
 Copyright 2016 Rob Redford
 This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
-To view a copy of this license, visit [BY-NC_SA].
+To view a copy of this license, visit [BY-NC-SA].
 
 
-[BY-NC_SA]: http://creativecommons.org/licenses/by-nc-sa/4.0
+[BY-NC-SA]: http://creativecommons.org/licenses/by-nc-sa/4.0
 [datasheet]: http://ww1.microchip.com/downloads/en/DeviceDoc/21298c.pdf
