@@ -2,7 +2,7 @@
 MCP320x is an Arduino library (for IDE version 1.6.5 and later) that provides an SPI interface to the Microchip 3204 and 3208 12-bit analog to digital converter (ADC) [datasheet].
 This is a rewrite of an older, similar library (see http://arduino.cc/forum/index.php?topic=53082.0 and http://arduino.cc/playground/Code/MCP320).
 
-This is a rewrite to conform to new SPI library SDK in IDE 1.6.5 and to allow both 5V and 3.3V operation.
+This new version conforms to new SPI library SDK in IDE 1.6.5 and allows both 5V and 3.3V operation (voltage support is transparent and does not need to be specified by tghe user).
 Types and functions have been redefined so this library is not directly compatible with the previous versions.
 However, the main concept in the older library of allowing for both SPI as well as direct pin manipulation modes is preserved.
 While the pin manipulation mode may be useful if SPI is not an option, it is 7-8 times slower than the SPI interface.
@@ -30,8 +30,32 @@ SPI mode constructor (uses standard SPI pins (depends on your MCU))
 |---------|------------|
 CS|chip select
 
-## Fucntions
+## Functions
+```C++
+uint16_t readChannel(uint8_t channel);
+```
+Read the selected MCP _channel_ and return the value. Returns **MCP_CHANNEL_ERROR** for _channel_ values out of range.
 
+```C++
+bool readAllChannels(uint16_t channelValue[], uint8_t channelCount);
+```
+Read all channels up to _channelCount_ into the given array (_channelValue_). Returns **true** if successful, else **false**.
+
+```C++
+MCPMode getMCPConfig(uint8_t channel);
+```
+Get configuration (single-ended(_MCP_SINGLE_) or differential(_MCP_DIFFERENTIAL_)) for the given _channel_. Returns **MCP_RANGE_ERROR** for values out of range.
+
+```C++
+bool setMCPConfig(MCPMode mode, uint8_t channel);
+```
+Sets _channel_ configuration to single-ended(_MCP_SINGLE_) or differential(_MCP_DIFFERENTIAL_). Use **MCP_ALL_PORTS** as the channel parameter to set all channels.
+Returns **true** if successful, else **false**.
+
+```C++
+float rawToVoltage(float VREF, uint16_t ADCRawValue);	
+```
+Convert output from `readChannel()` _ADCRawValue_ to volts using given reference voltage _VREF_. This must be the same as the voltage supplied to the MCP VREF pin.
 
 
 ## Copyright Notice

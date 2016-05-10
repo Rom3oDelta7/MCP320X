@@ -43,7 +43,7 @@ class MCP320x {
     uint16_t	readChannel(uint8_t channel);											// read the selected MCP channel
     bool 		readAllChannels(uint16_t channelValue[], uint8_t channelCount);			// read all channels up to count into given array
     MCPMode 	getMCPConfig(uint8_t channel);											// get SGL/DIFF config for given channel
-    bool 		setMCPConfig(MCPMode mode, uint8_t channel);							// set channel SGL/DIFF config for a channel (MCP_ALL_PORTS to see all channels)
+    bool 		setMCPConfig(MCPMode mode, uint8_t channel);							// set channel SGL/DIFF config for a channel (MCP_ALL_PORTS to set all channels)
     float 		rawToVoltage(float VREF, uint16_t ADCRawValue);							// convert ADC raw value to volts using given reference voltage (MCP VREF pin)
 
   private:
