@@ -1,0 +1,29 @@
+#######################################
+# Syntax Coloring Map For MCP320x
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+MCP320x	KEYWORD1
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+readChannel	KEYWORD2
+readAllChannels	KEYWORD2
+getMCPConfig	KEYWORD2
+setMCPConfig	KEYWORD2
+rawToVoltage	KEYWORD2
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+MCP_MAX_PORTS LITERAL1
+MCP_ALL_PORTS LITERAL1
+MCP_CHANNEL_ERROR LITERAL1
+MCP_SINGLE LITERAL1
+MCP_DIFFERENTIAL LITERAL1
+MCP_RANGE_ERROR LITERAL1
