@@ -15,7 +15,7 @@ MCP320x(uint8_t CS, uint8_t DIN, uint8_t DOUT, uint8_t CLK);
 Pin mode constructor.
 
 |Parameter|Purpose|
-|----|-------|
+|---|---|
 CS|chip select
 DIN|MCP data in
 DOUT|MCP data out
