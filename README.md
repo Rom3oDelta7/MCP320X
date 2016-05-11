@@ -15,7 +15,7 @@ MCP320x(uint8_t CS, uint8_t DIN, uint8_t DOUT, uint8_t CLK);
 Pin mode constructor.
 
 |Parameter|Purpose|
-|----|-------|
+|---|---|
 CS|chip select
 DIN|MCP data in
 DOUT|MCP data out
@@ -27,7 +27,7 @@ MCP320x(uint8_t CS);
 SPI mode constructor (uses standard SPI pins MISO, MOSI, and SCK (pin numbers depend on your MCU))
 
 |Parameter|Purpose|
-|---|-------|
+|---|---|
 CS|chip select
 
 ## Functions
@@ -68,7 +68,7 @@ There is still no Zip download button in Bitbucket (at least not that I can find
 click on the "Downloads" link on the left side menu and "Download Repository" on the next page.
 This will download a .zip file that you can install by using the "Include Library>Add .ZIP Library" menu commands in the Arduino IDE.
 
-Of course, you may also clone this library and manually install the files if you prefer.
+Of course, you may also clone this repository and manually install the files if you prefer.
 
 # Copyright Notice
 
