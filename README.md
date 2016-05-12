@@ -1,4 +1,4 @@
-# MCP3204/8 Arduino Library
+# MCP3204/MCP3208 Arduino Library
 MCP320x is an Arduino library (for IDE version 1.6.5 and later) that provides an SPI interface to the [Microchip 3204 and 3208 12-bit analog to digital converter] (ADC).
 This is a rewrite of an older, similar library (see http://arduino.cc/forum/index.php?topic=53082.0 and http://arduino.cc/playground/Code/MCP320).
 
